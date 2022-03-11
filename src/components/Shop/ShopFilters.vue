@@ -1,5 +1,9 @@
 <script setup lang="ts">
-import type { FiltersInterface, FilterUpdate } from '../../interfaces';
+import type {
+  FiltersInterface,
+  FilterUpdate,
+  Category,
+} from '../../interfaces';
 defineProps<{
   filters: FiltersInterface;
 }>();
@@ -44,14 +48,16 @@ const emit = defineEmits<{
       </div>
     </section>
     <section class="mb-20 flex-fill">
-            <h3 class="mb-10">Trier par categories</h3>
-            <p
-                class="category"
-                :class="{ selected: filters.category === category }"
-                v-for="category in (['all', 'desktop', 'gamer', 'streaming'] as Category[])"
-                @click="emit('updateFilter', { category })"
-            >{{ category }}</p>
-        </section>
+      <h3 class="mb-10">Trier par categories</h3>
+      <p
+        class="category"
+        :class="{ selected: filters.category === category }"
+        v-for="category in (['all', 'desktop', 'gamer', 'streaming'] as Category[])"
+        @click="emit('updateFilter', { category })"
+      >
+        {{ category }}
+      </p>
+    </section>
   </div>
 </template>
 
