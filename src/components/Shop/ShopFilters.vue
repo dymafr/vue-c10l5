@@ -43,6 +43,15 @@ const emit = defineEmits<{
         </label>
       </div>
     </section>
+    <section class="mb-20 flex-fill">
+            <h3 class="mb-10">Trier par categories</h3>
+            <p
+                class="category"
+                :class="{ selected: filters.category === category }"
+                v-for="category in (['all', 'desktop', 'gamer', 'streaming'] as Category[])"
+                @click="emit('updateFilter', { category })"
+            >{{ category }}</p>
+        </section>
   </div>
 </template>
 
