@@ -61,4 +61,17 @@ const emit = defineEmits<{
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.category {
+  font-size: 14px;
+  line-height: 18px;
+  cursor: pointer;
+  &:hover {
+    text-decoration: underline;
+  }
+}
+.selected {
+  font-weight: bold;
+  text-decoration: underline;
+}
+</style>
